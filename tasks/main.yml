@@ -5,6 +5,16 @@
     name:
       - git
 
+- name: Ensuring the wwwroot directory exists with the right ownership & mode
+  ansible.builtin.file:
+    path: "{{ git_website_wwwroot }}"
+    state: directory
+    mode: "{{ git_website_wwwroot_mode }}"
+    owner: "{{ git_website_user }}"
+    group: "{{ git_website_group }}"
+  vars:
+    ansible_remote_tmp: /tmp
+
 - name: Making sure we have the latest version of the code
   become: true
   become_user: "{{ git_website_user }}"

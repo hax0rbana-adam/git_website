@@ -1,5 +1,7 @@
 git_website_repo: https://gitlab.hax0rbana.org/public-repos/webauthn-demo.git
 git_website_wwwroot: /var/www/html
-git_website_user: www-data
+git_website_wwwroot_mode: "0755"
+git_website_user: nginx
+git_website_group: nginx
 # version can be a branch name, tag, or commit hash
 git_website_version: "HEAD"
