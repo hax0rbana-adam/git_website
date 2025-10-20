@@ -1,0 +1,18 @@
+---
+galaxy_info:
+  author: Adam
+  description: Deploy a website that is stored in git
+  license: MIT
+  company: none
+  min_ansible_version: "2.7"
+  platforms:
+    - name: Debian
+      versions:
+        - bookworm
+  galaxy_tags:
+    - b2p
+    - books2prisoners
+  role_name: git_website
+  namespace: hax0rbana_adam
+
+dependencies: []

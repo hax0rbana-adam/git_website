@@ -1,0 +1,16 @@
+# This role is expected to run as root so it can install system-wide packages
+# and switch to the correct user before checking out the repo
+- name: Install dependencies
+  ansible.builtin.package:
+    name:
+      - git
+
+- name: Making sure we have the latest version of the Lemur code
+  become: true
+  become_user: "{{ git_website_user }}"
+  ansible.builtin.git:
+    dest: "{{ git_website_wwwroot }}"
+    repo: '{{ git_website_repo }}'
+    force: true  # overwrite any changes made manually
+    single_branch: true  # checkout faster
+    version: '{{ git_website_version }}'
