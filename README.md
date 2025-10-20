@@ -27,8 +27,8 @@ publicly accessibe and sets up a TLS certificate from LetsEncrypt.
 - hosts: all
   remote_user: root
   roles:
-    - role: hax0rbana_adam.git_website
     - role: nginxinc.nginx
+    - role: hax0rbana_adam.git_website
     - role: geerlingguy.certbot
     - role: nginxinc.nginx_config
   vars:
