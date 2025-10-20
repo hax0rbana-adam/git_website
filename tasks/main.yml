@@ -5,7 +5,7 @@
     name:
       - git
 
-- name: Making sure we have the latest version of the Lemur code
+- name: Making sure we have the latest version of the code
   become: true
   become_user: "{{ git_website_user }}"
   ansible.builtin.git:
