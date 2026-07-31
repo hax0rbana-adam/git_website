@@ -32,6 +32,10 @@ publicly accessibe and sets up a TLS certificate from LetsEncrypt.
     - role: geerlingguy.certbot
     - role: nginxinc.nginx_config
   vars:
+    certbot_create_if_missing: true
+    certbot_certs:
+      - email: webmaster@{{ansible_domain}}
+        domains: [ "{{ansible_fqdn}}" ]
     nginx_config_http_template_enable: true
     nginx_config_http_template:
       - backup: false
